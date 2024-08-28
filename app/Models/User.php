@@ -42,4 +42,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+//    protected function mobile() : \Attribute
+//    {
+//        return \Attribute::make(
+//            set:fn($value) => str_replace("-","", $value),
+//            get:fn($value) => $value
+//        );
+//    }
+
+    protected function tel() : \Attribute
+    {
+        return \Attribute::make(
+            set:fn($value) => str_replace("-","", $value),
+            get:fn($value) => $value
+        );
+    }
 }
